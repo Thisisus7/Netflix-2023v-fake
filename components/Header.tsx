@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ImSearch } from 'react-icons/im';
-import { IoMdNotifications } from 'react-icons/Io';
+import { IoMdNotifications } from 'react-icons/io';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
