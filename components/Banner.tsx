@@ -1,9 +1,11 @@
 import Image from "next/legacy/image"
 import { useEffect, useState } from "react"
 import { BsFillPlayFill, BsInfoCircle } from 'react-icons/bs'
+import { useRecoilState } from 'recoil'
 
 import { baseUrl } from "../constants/movie";
 import { Movie } from "../typings"
+import { modalState, movieState } from '../atoms/modalAtom'
 
 interface Props { 
     netflixOriginals: Movie[];
@@ -15,6 +17,10 @@ function Banner({ netflixOriginals }: Props) {
   useEffect(() => {
     setMovie(netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)])  // random idx of movies
   }, [netflixOriginals]);
+
+  // modal
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
 
   return (
     <div  className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[95vh] lg:justify-end lg:pb-12">
@@ -33,7 +39,13 @@ function Banner({ netflixOriginals }: Props) {
             <BsFillPlayFill className="h-4 w-4 md:h-7 md:w-7"/>
             Play
           </button>
-          <button className="bannerButton bg-[gray]/70">
+          <button 
+            className="bannerButton bg-[gray]/70" 
+            onClick={() => {
+              setCurrentMovie(movie)
+              setShowModal(true)
+            }}
+          >
             <BsInfoCircle className="h-5 w-5 md:h-7 md:w-7"/>
             More Info
           </button>

@@ -3,8 +3,12 @@ import { useEffect, useState } from 'react';
 import { ImSearch } from 'react-icons/im';
 import { IoMdNotifications } from 'react-icons/io';
 
+import useAuth from '../hooks/useAuth';
+
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const { logout } = useAuth();
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
@@ -39,9 +43,9 @@ function Header() {
             <ImSearch className='hidden w-5 h-5 sm:inline' />
             <p className='hidden lg:inline'>Kids</p>
             <IoMdNotifications className='h-6 w-6' />
-            <Link href='/account'>
-                <img src="https://rb.gy/g1pwyx" className="cursor-pointer rounded" />
-            </Link>   
+            {/* <Link href='/account'> */}
+                <img src="https://rb.gy/g1pwyx" className="cursor-pointer rounded" onClick={logout} />
+            {/* </Link>    */}
         </div>
     </header>
   )
