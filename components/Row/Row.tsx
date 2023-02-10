@@ -1,15 +1,14 @@
 import { useRef, useState } from "react"
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { DocumentData } from "firebase/firestore"
 
 import Thumbnail from "./Thumbnail"
 import { Movie } from "../../typings"
 
 interface Props {
-    title: string
-    // When using firebase
-    // movie: Movie | DocumentData
-    movies: Movie[]
-}
+    title: string;
+    movies: Movie[] | DocumentData[];
+};
 
 function Row({title, movies}: Props) {
     // row reference

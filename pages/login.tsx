@@ -93,7 +93,7 @@ function Login() {
           <button 
             type="submit" 
             className="text-white hover:underline" 
-            onClick={() => {setLogin(true)}}
+            onClick={() => {setLogin(false)}}
           >Sign up now
           </button>
         </div>

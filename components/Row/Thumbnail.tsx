@@ -1,13 +1,13 @@
-import Image from "next/legacy/image"
-import { useRecoilState } from 'recoil'
+import Image from "next/legacy/image";
+import { useRecoilState } from 'recoil';
+import { DocumentData } from "firebase/firestore";
 
-import { Movie } from "../../typings"
-import { modalState, movieState } from '../../atoms/modalAtom'
+import { Movie } from "../../typings";
+import { modalState, movieState } from '../../atoms/modalAtom';
 
 interface Props {
-  // When using firebase
-  movie: Movie
-}
+  movie: Movie | DocumentData;
+};
 
 function Thumbnail({ movie }: Props) {
     // modal

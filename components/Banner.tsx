@@ -23,7 +23,7 @@ function Banner({ netflixOriginals }: Props) {
   const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
 
   return (
-    <div  className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[95vh] lg:justify-end lg:pb-12">
+    <div  className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[95vh] lg:justify-end lg:pb-3">
       {/* home picture */}
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
           <Image src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`} layout='fill' objectFit="cover"/> 
@@ -32,7 +32,7 @@ function Banner({ netflixOriginals }: Props) {
         <h1 className="text-2xl font-fold lg:text-5xl md:text-3xl">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <p className="max-w-xs text-shadow-md text-xs md:max-w-lg md:text-lg lg:max-w-xl lg:text-xl">{movie?.overview}</p>
+        <p className="max-w-xs text-shadow-md text-xs md:max-w-lg md:text-base lg:max-w-xl lg:text-lg">{movie?.overview}</p>
         {/* button */}
         <div className="flex space-x-3">
           <button className="bannerButton bg-white text-black">
