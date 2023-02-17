@@ -20,7 +20,7 @@ function Account({products}: Props) {
     <div>
         <Head>
             <title>Netflix - Account Settings</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/logo.png" />
         </Head>
         <header className={`bg-[#141414]`}>
             <Link href="/">
@@ -33,9 +33,9 @@ function Account({products}: Props) {
             </Link>
             <Link href="/account">
             <img
-                src="https://rb.gy/g1pwyx"
+                src="favicon.ico"
                 alt=""
-                className="cursor-pointer rounded"
+                className="cursor-pointer rounded h-7 w-7"
             />
             </Link>
       </header>
